@@ -1,0 +1,32 @@
+#!/bin/bash
+
+if [ $# -eq 0] ; then
+	echo 
+# makeflask <APP_NAME>
+
+mkdir <APP_NAME>
+    # if <APP_NAME> already exists, prompt user with y/n
+    # question to see if they want to overwrite.
+    # If 'n', exit.
+
+cd <APP_NAME>
+python3 -m venv env
+source env/bin/activate  # assume 'bin'
+pip install Flask
+pip install requests
+
+create a starter app.py
+
+--- BEGIN app.py ---
+from flask import Flask, render_template
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+--- END app.py ---
+
+mkdir templates
+makehtml templates/index
+mkdir static
+touch appclient.py
